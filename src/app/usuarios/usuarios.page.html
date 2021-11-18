@@ -1,0 +1,61 @@
+<ion-header>
+  <ion-toolbar color="secondary">
+    <ion-title class="ion-text-center" >Bienvenido</ion-title>
+    <ion-button (click)="Cerrar()" color="danger" slot="end">
+      <ion-icon name="close-circle-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+<!--<div>-->
+  <ion-card *ngIf="listado.length > 0">
+  <ion-card-content>
+  <ion-list>
+    <!--<div *ngFor="let aux of listado" [routerLink]="['/detalle/', aux.id]">-->
+      <ion-card-header>
+        <ion-card-title class="ion-text-center">Listado de usuarios</ion-card-title>
+      </ion-card-header>
+    <ion-card *ngFor="let aux of listado" [routerLink]="['/detalle/', aux.id]" color="light">
+      
+    <ion-card-content>
+      <ion-row>
+        <ion-col size="4">ID Usuario</ion-col>
+        <ion-col size="8">{{aux.userId}}</ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-col size="4">ID</ion-col>
+        <ion-col size="8">{{aux.id}}</ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-col size="4">Titulo</ion-col>
+        <ion-col size="8">{{aux.title}}</ion-col>
+        </ion-row>
+        <ion-row>
+        <ion-col size="4">Cuerpo</ion-col>
+        <ion-col size="8">{{aux.body}}</ion-col>
+      </ion-row>
+ <!--  <ion-item>
+        <ion-label>{{aux.userId}}</ion-label>
+        <ion-label>{{aux.id}}</ion-label>
+        <ion-label>{{aux.title}}</ion-label>
+        <ion-label>{{aux.body}}</ion-label>
+      </ion-item>
+      <hr>-->   
+<!--<div>-->
+</ion-card-content>
+</ion-card>
+  </ion-list>  
+</ion-card-content>
+</ion-card>
+<!--<div>-->
+</ion-content>
+<ion-footer>
+  <ion-toolbar color="secondary">
+    <div class="ion-text-center">
+    <ion-button (click)="listar()" color="dark">
+      <ion-icon name="list-outline" slot="icon-only"></ion-icon>
+    </ion-button>
+  </div>
+  </ion-toolbar>
+</ion-footer>
